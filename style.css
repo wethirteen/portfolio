@@ -275,12 +275,39 @@ main {
   }
 }
 .portfolio-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   aspect-ratio: 4/3;
-  background-color: #86a8e7;
+  text-decoration: none;
+  color: #fff;
+  overflow: hidden;
   @media screen and (min-width: 786px) {
     margin-bottom: 24px;
   }
+}
+.portfolio-item-text {
+  font: var(--text-heading-2);
+  z-index: 2;
+}
+.portfolio-item-cover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(70%);
+  scale: 1;
+  transition: all 200ms ease-in-out;
+}
+.portfolio-item:hover .portfolio-item-cover {
+  scale: 1.05;
+  filter: brightness(90%);
 }
 
 /* 4. 플랜 */
